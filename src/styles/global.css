@@ -21,3 +21,7 @@ html.lenis, html.lenis body {
   [data-cms-section]:not(:has(.w-dyn-item)){ 
     display:none; 
   }
+
+  .footer-links-wrapper > .w--current {
+    opacity: 0.4;
+  }
