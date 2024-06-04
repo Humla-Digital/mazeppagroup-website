@@ -13,17 +13,17 @@ window.Webflow.push(() => {
 
 export function whyUsBackgroundImage() {
   const wrapper = $('.why-us-background-image');
-  const bgImage = $('.image-full-cover');
+  const bgImage = $('#why-us-image');
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: wrapper,
-      start: 'top bottom',
+      start: 'top top',
       end: 'bottom top',
-      scrub: 1.2,
+      scrub: 1,
     },
   });
   tl.to(bgImage, {
-    y: '10%',
+    y: '7%',
     autoAlpha: 0.3,
   });
 }
