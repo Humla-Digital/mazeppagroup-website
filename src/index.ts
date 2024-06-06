@@ -50,7 +50,6 @@ export function whyUsTexts() {
     scrollTrigger: {
       trigger: textBox1,
       start: '-100% center',
-      markers: true,
     },
   });
   tl1.from(textBox1, {
