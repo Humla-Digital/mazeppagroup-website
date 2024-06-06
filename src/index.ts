@@ -9,7 +9,21 @@ window.Webflow.push(() => {
   whyUsTexts();
   servicesHorizontalScroll();
   articlesAnim();
+  navbarAnim();
 });
+
+export function navbarAnim() {
+  const wrapper = $('.why-us-background-image');
+
+  ScrollTrigger.create({
+    trigger: wrapper,
+    start: '-10% top',
+    end: 'bottom top',
+    onEnter: () => $('.navbar').addClass('is-opaque'),
+    onLeave: () => $('.navbar').removeClass('is-opaque'),
+    scrub: 1,
+  });
+}
 
 export function whyUsBackgroundImage() {
   const wrapper = $('.why-us-background-image');
@@ -35,7 +49,8 @@ export function whyUsTexts() {
   const tl1 = gsap.timeline({
     scrollTrigger: {
       trigger: textBox1,
-      start: 'top center',
+      start: '-100% center',
+      markers: true,
     },
   });
   tl1.from(textBox1, {
@@ -47,7 +62,7 @@ export function whyUsTexts() {
   const tl2 = gsap.timeline({
     scrollTrigger: {
       trigger: textBox2,
-      start: 'top center',
+      start: '-100% center',
     },
   });
   tl2.from(textBox2, {
@@ -59,7 +74,7 @@ export function whyUsTexts() {
   const tl3 = gsap.timeline({
     scrollTrigger: {
       trigger: textBox3,
-      start: 'top center',
+      start: '-100% center',
     },
   });
   tl3.from(textBox3, {
@@ -71,19 +86,26 @@ export function whyUsTexts() {
 }
 
 export function servicesHorizontalScroll() {
-  const sections = gsap.utils.toArray('.home-hz-solution-wrap');
+  const mm = gsap.matchMedia();
 
-  gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.section_home-solutions',
-      pin: true,
-      scrub: 1,
-      snap: 1 / (sections.length - 1),
-      start: '-=71',
-      end: () => '+=' + document.querySelector<HTMLElement>('.section_home-solutions')!.offsetWidth,
-    },
+  // add a media query. When it matches, the associated function will run
+  mm.add('(min-width: 992px)', () => {
+    // this setup code only runs when viewport is at least 800px wide
+    const sections = gsap.utils.toArray('.home-hz-solution-wrap');
+
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.section_home-solutions',
+        pin: true,
+        scrub: 1,
+        snap: 1 / (sections.length - 1),
+        start: '-=71',
+        end: () =>
+          '+=' + document.querySelector<HTMLElement>('.section_home-solutions')!.offsetWidth,
+      },
+    });
   });
 }
 
