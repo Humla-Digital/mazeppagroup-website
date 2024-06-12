@@ -16,4 +16,20 @@ window.Webflow.push(() => {
   });
 
   gsap.ticker.lagSmoothing(0);
+  let isOpened = false;
+  function update() {
+    if (isOpened) {
+      lenis.stop();
+    } else {
+      lenis.start();
+    }
+  }
+
+  function onClick() {
+    isOpened = !isOpened;
+
+    update();
+  }
+
+  $('.home-article-item .is-portrait').on('click', onClick);
 });
