@@ -32,4 +32,5 @@ window.Webflow.push(() => {
   }
 
   $('.home-article-item .is-portrait').on('click', onClick);
+  $('.portrait-interview-close').on('click', onClick);
 });
