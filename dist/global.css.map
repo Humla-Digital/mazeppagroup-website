@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/styles/global.css"],
+  "sourcesContent": ["html.lenis, html.lenis body {\n    height: auto;\n  }\n  \n  .lenis.lenis-smooth {\n    scroll-behavior: auto !important;\n  }\n  \n  .lenis.lenis-smooth [data-lenis-prevent] {\n    overscroll-behavior: contain;\n  }\n  \n  .lenis.lenis-stopped {\n    overflow: hidden;\n  }\n  \n  .lenis.lenis-scrolling iframe {\n    pointer-events: none;\n  }\n\n  [data-cms-section]:not(:has(.w-dyn-item)){ \n    display:none; \n  }\n\n  .footer-links-wrapper > .w--current {\n    opacity: 0.2;\n  }"],
+  "mappings": ";AAAA,IAAI,CAAC;AAAO,IAAI,CAAX,MAAkB;AACnB,UAAQ;AACV;AAEA,CAJG,KAIG,CAAC;AACL,mBAAiB;AACnB;AAEA,CARG,KAQG,CAJC,aAIa,CAAC;AACnB,uBAAqB;AACvB;AAEA,CAZG,KAYG,CAAC;AACL,YAAU;AACZ;AAEA,CAhBG,KAgBG,CAAC,gBAAgB;AACrB,kBAAgB;AAClB;AAEA,CAAC,iBAAiB,KAAK,KAAK,CAAC;AAC3B,WAAQ;AACV;AAEA,CAAC,qBAAqB,EAAE,CAAC;AACvB,WAAS;AACX;",
+  "names": []
+}

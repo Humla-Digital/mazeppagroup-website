@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/styles/index.css"],
+  "sourcesContent": ["@media only screen and (min-width: 992px) {\n.section_home-solutions {\n\theight: calc(100vh - 71px);\n  }\n}"],
+  "mappings": ";AAAA,OAAO,KAAK,OAAO,IAAI,CAAC,SAAS,EAAE;AACnC,GAAC;AACA,YAAQ,KAAK,MAAM,EAAE;AACpB;AACF;",
+  "names": []
+}
